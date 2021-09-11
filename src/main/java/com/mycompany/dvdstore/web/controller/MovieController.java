@@ -1,5 +1,4 @@
 package com.mycompany.dvdstore.web.controller;
-
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+
 @Controller
+@RequestMapping("/movie")
 public class MovieController {
 
     @Autowired
@@ -21,9 +23,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-//private MovieService movieService = new MovieService();
-
-
+    //private MovieService movieService = new MovieService();
 
     @RequestMapping("/{id}")
     public String  displayMovieCard(@PathVariable("id") Long id, Model model) {
